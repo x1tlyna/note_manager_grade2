@@ -1,10 +1,9 @@
 from datetime import datetime, timedelta
 current_datetime = datetime.now()
 created_date=current_datetime.date()
-
 note = {}
 
-note['username']=input('введите имя пользователя: ') #ввод имени пользователя
+note['username']=input('введите имя пользователя: ')
 note['titles']=[]
 note['status']=[]
 note['content']=[]
@@ -12,7 +11,7 @@ note['created_date']=[]
 note['issue_date']=[]
 
 
-while True: # цикл добавления заголовков
+while True: # цикл добавления заголовков добавляет одной записке сколь угодно заголовков
     title=input(f"введите заголовок заметки или напишите стоп ")
 
     if title == 'стоп' or title == '':
@@ -61,4 +60,5 @@ while True:
 
     else:
         break
+
 print(f"Ваши заметки:",note)
