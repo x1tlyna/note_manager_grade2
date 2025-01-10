@@ -1,22 +1,17 @@
 from datetime import datetime, timedelta
-
 current_datetime = datetime.now()
-
-
-
-#int(input('сколько заметок Вы хотите создать?:'))
-
 notes=[] # пустой список для заметок
+
 def create_note():
     while True:
-            username=input('введите имя пользователя: ') #ввод имени пользователя
+            username=input('введите имя пользователя: ') #
             title=input('введите заголовок заметки: ')
             content=input('введите пункты заметки (пункты вводить через запятую): ')
             status=input('введите статус заметки: ')
             created_date=current_datetime.date()
             time=int(input('количество дней на выполнение заметки: '))
             issue_date = created_date + timedelta(days=time)
-            note = { #наполнение списка заметокк
+            note = { #словарь заметок
                 'имя': username,
                 'заголовок': title,
                 'пункты': content,
@@ -34,7 +29,7 @@ def create_note():
             else:
                 print('ввод неверный, введите еще раз')
                 continue
-        
+
 
 def show_note():
     print("ваши заметки:")
@@ -43,13 +38,15 @@ def show_note():
             f"Статус: {note['статус']}, Дата создания: {note['дата создания заметки']}, "
             f"Срок выполнения до: {note['срок выполнения заметки']}")
 
+
 def delete_note():
-    change=input('введите имя пользователя или заголовок, по которому хотите удалить заметку ', )
+    change=input('введите имя пользователя или заголовок, по которому хотите удалить заметку(или нажмите enter чтобы не удаля) ', )
     for note in notes:
         if note['заголовок'] == change or note['имя'] == change :
             notes.remove(note)
-            
-create_note()
-show_note()
-delete_note()
-show_note()
+
+          
+create_note() #ф-ция создания заметок
+show_note() #ф-ция вывода заметок на экран 
+delete_note() #ф-ция удаления заметок по имени или заголовку
+show_note() #ф-ция вывода заметок на экран (в данном случае нужна для вывода заметок после удаления)
