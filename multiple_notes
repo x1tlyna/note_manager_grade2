@@ -1,12 +1,7 @@
 from datetime import datetime, timedelta
-
 current_datetime = datetime.now()
-
-
-
-#int(input('сколько заметок Вы хотите создать?:'))
-
 notes=[] # пустой список для заметок
+
 def create_note():
     while True:
             username=input('введите имя пользователя: ') #ввод имени пользователя
@@ -35,7 +30,6 @@ def create_note():
                 print('ввод неверный, введите еще раз')
                 continue
         
-
 def show_note():
     print("ваши заметки:")
     for note in notes: #вывод всех получившихся заметок
