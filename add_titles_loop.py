@@ -1,13 +1,10 @@
 from datetime import datetime, timedelta
 current_datetime = datetime.now()
-
-
-username=input('введите имя пользователя: ') #ввод имени пользователя
 title=1
-
 notes=[] # пустой список для заметок
 
 while True:
+    username=input('введите имя пользователя: ') #ввод имени пользовател
     title=input("введите заголовок заметки: (напишите 'стоп' или нажмите 'enter' для завершения) ")
     if title == 'стоп' or title == '':
         break
@@ -25,7 +22,7 @@ while True:
         'срок выполнения заметки': issue_date.strftime('%d-%m-%Y')
     }
     notes.append(note) # добавления словаря в список
-    #count = input("создать еще заметку? (напишите 'стоп' или нажмите 'enter' для завершения): ")
+
 print("ваши заметки:")
 for note in notes: #вывод всех получившихся заметок
    print(f"Имя: {note['имя']}, Заголовок: {note['заголовок']}, Пункты: {note['пункты']}, "
